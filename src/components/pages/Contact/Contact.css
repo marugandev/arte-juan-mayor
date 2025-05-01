@@ -1,0 +1,16 @@
+.site-contact {
+  margin-left: auto;
+  text-align: end;
+  width: 66.6%;
+}
+
+.site-contact-link {
+  background-color: var(--ajm-accent);
+  border: none;
+  user-select: text;
+}
+
+/* .site-contact-link:hover {
+  border: 2px solid var(--ajm-accent);
+  background-color: transparent;
+} */

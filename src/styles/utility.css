@@ -1,0 +1,79 @@
+/* variables, custom css classes */
+
+/* colors */
+.text-white {
+  color: var(--ajm-white);
+}
+.text-black {
+  color: var(--ajm-black);
+}
+.text-secondary {
+  color: var(--ajm-text-secondary);
+}
+.text-primary {
+  color: var(--ajm-text-primary);
+}
+.text-inverse {
+  color: var(--ajm-text-inverse);
+}
+
+.accent {
+  color: var(--ajm-accent);
+}
+
+.accent-hover {
+  color: var(--ajm-accent-hover);
+}
+
+/* font sizes */
+.text-xs {
+  font-size: var(--ajm-font-xs);
+}
+.text-sm {
+  font-size: var(--ajm-font-sm);
+}
+.text-md {
+  font-size: var(--ajm-font-md);
+}
+.text-lg {
+  font-size: var(--ajm-font-lg);
+}
+.text-xl {
+  font-size: var(--ajm-font-xl);
+}
+
+/* margins */
+.mt-sm {
+  margin-top: var(--ajm-space-sm);
+}
+.mb-md {
+  margin-bottom: var(--ajm-space-md);
+}
+
+/* paddings */
+.p-sm {
+  padding: var(--ajm-space-sm);
+}
+.p-md {
+  padding: var(--ajm-space-md);
+}
+.p-lg {
+  padding: var(--ajm-space-lg);
+}
+
+/* gaps */
+.gap-md {
+  gap: var(--ajm-space-md);
+}
+
+.gap-lg {
+  gap: var(--ajm-space-lg);
+}
+
+/* border radius */
+.rounded-sm {
+  border-radius: var(--ajm-radius-sm);
+}
+.rounded-lg {
+  border-radius: var(--ajm-radius-lg);
+}

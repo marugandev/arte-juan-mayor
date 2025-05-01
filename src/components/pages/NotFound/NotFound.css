@@ -1,0 +1,47 @@
+.page-not-found {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-not-found .button {
+  margin-top: var(--ajm-space-md);
+  font-size: var(--ajm-font-base);
+  cursor: pointer;
+  padding: var(--ajm-space-md);
+  color: var(--ajm-accent);
+  background-color: transparent;
+  border: 1px solid var(--ajm-accent);
+  transition: all 0.4s ease;
+  position: relative;
+  width: 200px;
+  height: 48px;
+}
+
+.page-not-found .button .arrow {
+  font-size: var(--ajm-font-lg);
+}
+
+.page-not-found .button:hover {
+  color: var(--ajm-text-primary);
+  background-color: var(--ajm-accent);
+  border: 1px solid transparent;
+}
+
+.page-not-found .button .text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.page-not-found .button .arrow {
+  position: absolute;
+  left: var(--ajm-space-md);
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}

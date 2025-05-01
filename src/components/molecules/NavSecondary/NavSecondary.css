@@ -1,0 +1,12 @@
+.navbar-secondary .list-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-link-secondary {
+  transition: all 0.4s ease;
+}
+
+.navbar-secondary .nav-link-secondary:hover {
+  color: var(--ajm-accent);
+}

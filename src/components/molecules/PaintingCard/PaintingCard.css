@@ -1,0 +1,26 @@
+.painting-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+
+.painting-card:hover {
+  transform: scale(0.95);
+}
+
+.painting-card:hover img {
+  transform: scale(1.15);
+}
+
+.painting-card img {
+  width: 100%;
+  max-height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.painting-card .cite {
+  font-weight: 400;
+}

@@ -1,0 +1,119 @@
+:root {
+  /* colors raw */
+  /* colors raw --neutrals */
+  --ajm-black: #0f0f0f;
+  --ajm-dark-gray: #1a1a1a;
+  --ajm-dark-gray-a: rgba(26, 26, 26, 0.8);
+  --ajm-gray-800: #2c2c2c;
+  --ajm-gray-600: #6b6b6b;
+  --ajm-gray-400: #a1a1a1;
+  --ajm-gray-200: #e5e5e5;
+  --ajm-light-gray: #f0f0f0;
+  --ajm-white: #fdfdfd;
+  --ajm-off-white: #f6f6f6;
+  /* colors raw --accents */
+  --ajm-color-accent: #febe98;
+  --ajm-color-accent-hover: #f1a35c;
+
+  /* colors --light Mode (default) */
+  /* colors --text*/
+  --ajm-text-primary: var(--ajm-dark-gray);
+  --ajm-text-secondary: var(--ajm-color-gray-600);
+  --ajm-text-inverse: var(--ajm-color-white);
+  /* colors --background */
+  --ajm-bg-primary: var(--ajm-color-white);
+  --ajm-bg-secondary: var(--ajm-color-off-white);
+  --ajm-bg-surface: var(--ajm-color-light-gray);
+  --ajm-bg-dark: var(--ajm-color-dark-gray);
+  /* colors --acents */
+  --ajm-bg-modal: var(--ajm-white);
+  --ajm-accent: var(--ajm-color-accent);
+  --ajm-accent-hover: var(--ajm-color-accent-hover);
+
+  /* typography */
+  /* typography --font family */
+  --ajm-font-family: "Lexend", sans-serif;
+  /* typography --font sizes */
+  --ajm-font-xs: 0.75rem; /* 12px */
+  --ajm-font-sm: 0.875rem; /* 14px */
+  --ajm-font-md: 1rem; /* 16px */
+  --ajm-font-base: 1.125rem; /* 18px */
+  --ajm-font-lg: 1.25rem; /* 20px */
+  --ajm-font-xl: 1.5rem; /* 24px */
+  --ajm-font-2xl: 2rem; /* 32px */
+  --ajm-font-3xl: 3rem; /* 48px */
+  /* typography --font weights */
+  --ajm-font-thin: 100;
+  --ajm-font-extralight: 200;
+  --ajm-font-light: 300;
+  --ajm-font-regular: 400;
+  --ajm-font-medium: 500;
+  --ajm-font-semibold: 600;
+  --ajm-font-bold: 700;
+  --ajm-font-extrabold: 800;
+  --ajm-font-black: 900;
+  /* line-height */
+  --ajm-line-height-base: 1.8;
+
+  /* spacings */
+  /* spacings --paddings, --margins, --gaps */
+  --ajm-space-xxs: 0.15rem;
+  --ajm-space-xs: 0.25rem; /* 4px */
+  --ajm-space-sm: 0.5rem; /* 8px */
+  --ajm-space-md: 1rem; /* 16px */
+  --ajm-space-lg: 1.5rem; /* 24px */
+  --ajm-space-xl: 2rem; /* 32px */
+  --ajm-space-2xl: 3rem; /* 48px */
+  --ajm-space-3xl: 4rem; /* 64px */
+
+  /* border radius */
+  --ajm-radius-sm: 4px;
+  --ajm-radius-md: 8px;
+  --ajm-radius-lg: 16px;
+  --ajm-radius-full: 9999px;
+
+  /* layout */
+  --ajm-max-width: 1200px;
+
+  /* transitions */
+  --ajm-transition-fast: 0.2s ease-in-out;
+  --ajm-transition-slow: 0.4s ease-in-out;
+
+  /* z-index */
+  --ajm-z-fixed: 1000;
+  --ajm-z-dropdown: 1500;
+  --ajm-z-modal: 2000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* colors --text */
+    --ajm-text-primary: var(--ajm-white);
+    --ajm-text-secondary: var(--ajm-gray-400);
+    --ajm-text-inverse: var(--ajm-black);
+
+    /* colors --background */
+    --ajm-bg-primary: var(--ajm-black);
+    --ajm-bg-secondary: var(--ajm-dark-gray);
+    --ajm-bg-surface: var(--ajm-gray-800);
+    --ajm-bg-dark: var(--ajm-dark-gray);
+    --ajm-bg-modal: var(--ajm-white);
+
+    /* colors --accent */
+    --ajm-accent: var(--ajm-accent);
+    --ajm-accent-hover: var(--ajm-accent-hover);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --ajm-font-xs: 0.6875rem; /* 11px */
+    --ajm-font-sm: 0.75rem; /* 12px */
+    --ajm-font-md: 0.875rem; /* 14px */
+    --ajm-font-base: 1rem; /* 16px */
+    --ajm-font-lg: 1.125rem; /* 18px */
+    --ajm-font-xl: 1.25rem; /* 20px */
+    --ajm-font-2xl: 1.5rem; /* 24px */
+    --ajm-font-3xl: 2.25rem; /* 36px */
+  }
+}

@@ -1,0 +1,21 @@
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.nav-container {
+  width: 66.6%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 1000px) {
+  .site-header {
+    flex-direction: column;
+    gap: var(--ajm-space-2xl);
+  }
+  .nav-container {
+    width: 100%;
+  }
+}

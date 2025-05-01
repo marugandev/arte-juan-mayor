@@ -1,0 +1,12 @@
+.painting-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  gap: var(--ajm-space-md);
+  margin: var(--ajm-space-xl) 0 var(--ajm-space-2xl) 0;
+}
+
+@media (max-width: 660px) {
+  .painting-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
