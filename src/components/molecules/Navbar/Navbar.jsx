@@ -1,6 +1,6 @@
 import "./Navbar.css";
 
-import { navRoutes } from "../../../routes/NavRoutes";
+import { navRoutes } from "../../../routes/navRoutes";
 import { NavLink, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
