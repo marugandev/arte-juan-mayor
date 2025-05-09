@@ -8,9 +8,9 @@ const Header = () => {
   console.log("Header");
 
   return (
-    <header className="site-header p-lg">
+    <header className="site-header">
       <LogoGroup />
-      <div className="nav-container gap-lg">
+      <div className="nav-container">
         <Navbar />
         <NavSecondary />
       </div>

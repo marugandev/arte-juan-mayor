@@ -5,14 +5,17 @@ import Header from "../../organisms/Header/Header";
 import { Outlet } from "react-router-dom";
 import Footer from "../../organisms/Footer/Footer";
 
-const MainLayout = () => {
+const ScrollWrapper = () => {
   useScrollToSection();
+  return <Outlet />;
+};
 
+const MainLayout = () => {
   return (
     <>
       <Header />
       <main className="site-main">
-        <Outlet />
+        <ScrollWrapper />
       </main>
       <Footer />
     </>
