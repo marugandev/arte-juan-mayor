@@ -4,7 +4,8 @@ export const completeWorkData = [
     order: 1,
     title: "1. Realismo figurativo",
     slug: "realismo-figurativo",
-    path: "/obra-completa/realismo-figurativo",
+    path: "/obra-completa",
+    category: "realismo-figurativo",
     subcategories: [
       {
         id: 2,
@@ -13,7 +14,7 @@ export const completeWorkData = [
         description:
           "Entre ellos se puede encontrar retratos del padre, mujer, hijos y otros familiares del artista.",
         slug: "retratos",
-        path: "/obra-completa/realismo-figurativo/retratos",
+        subCategory: "retratos",
         images: [
           {
             id: "retratos-1",
@@ -119,7 +120,7 @@ export const completeWorkData = [
         description:
           "Se incluyen desiertos, ríos desde el cielo, mares, montañas, prados, plantas (o sus hojas y frutos), animales y construcciones en distintos contextos.",
         slug: "representaciones-de-la-naturaleza",
-        path: "/obra-completa/realismo-figurativo/representaciones-de-la-naturaleza",
+        subCategory: "representaciones-de-la-naturaleza",
         images: [
           {
             id: "naturaleza-1",
@@ -285,7 +286,7 @@ export const completeWorkData = [
     order: 2,
     title: "2. Realismo-abstracto",
     slug: "realismo-abstracto",
-    path: "/obra-completa/realismo-abstracto",
+    category: "realismo-abstracto",
     subcategories: [
       {
         id: 5,
@@ -295,7 +296,7 @@ export const completeWorkData = [
         description:
           "Se incluyen desiertos, ríos y lagos, mares, rocas, troncos y hojas y construcciones.",
         slug: "representaciones-de-la-naturaleza-que-insinuan-abstracciones",
-        path: "/obra-completa/realismo-abstracto/representaciones-de-la-naturaleza-que-insinuan-abstracciones",
+        subCategory: "representaciones-de-la-naturaleza-que-insinuan-abstracciones",
         images: [
           {
             id: "abstraccion-1",

@@ -20,7 +20,9 @@ const PaintingGallery = ({ images, routeBase, allVisibleImages }) => {
     const globalIndex = modalImages.findIndex((img) => img.id === imageId);
     setSelectedIndex(globalIndex);
     setModalOpen(true);
-    navigate(`${routeBase}/${modalImages[globalIndex].id}`);
+    console.log(routeBase);
+
+    navigate(`${routeBase}&id=${modalImages[globalIndex].id}`);
   };
 
   const closeModal = () => {
