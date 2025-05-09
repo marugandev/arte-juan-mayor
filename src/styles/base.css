@@ -11,6 +11,11 @@
   -webkit-user-drag: none;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   font-family: "Lexend", sans-serif;
   font-optical-sizing: auto;
@@ -46,3 +51,9 @@ p {
   max-width: 65ch;
   margin: 0 auto;
 } */
+
+@media (max-width: 768px) {
+  body {
+    line-height: var(--ajm-line-height-md);
+  }
+}

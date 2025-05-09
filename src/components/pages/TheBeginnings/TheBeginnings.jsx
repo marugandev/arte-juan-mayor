@@ -6,12 +6,12 @@ import GallerySectionLayout from "../../templates/GallerySectionLayout";
 const TheBeginnings = () => {
   console.log("the Beginnings");
 
-  const { title, subtitle, description, path } = theBeginningsData[0];
+  const { title, subtitle, description, slug, path } = theBeginningsData[0];
 
   const images = theBeginningsData.flatMap((i) => i.images);
 
   return (
-    <section className="site-the-beginnings">
+    <section id={slug} className="site-the-beginnings">
       <GallerySectionLayout
         title={title}
         subtitle={subtitle}

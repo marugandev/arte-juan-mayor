@@ -2,7 +2,7 @@ import "./About.css";
 
 const About = () => {
   return (
-    <section className="site-about">
+    <section id="juan-mayor" className="site-about">
       <div className="img-container">
         <img
           src="https://res.cloudinary.com/cloudcloudinary0/image/upload/v1745530038/arte_juan_mayor/flbkcwavjxxrsftkzy2v.webp"

@@ -1,3 +1,7 @@
+#juan-mayor {
+  scroll-margin-top: var(--ajm-space-xl);
+}
+
 .site-about {
   max-width: 66.6%;
   margin-left: auto;

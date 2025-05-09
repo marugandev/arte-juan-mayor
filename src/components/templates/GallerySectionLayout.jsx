@@ -2,6 +2,7 @@ import Note from "../atoms/Note/Note";
 import PaintingGallery from "../organisms/PaintingGallery/PaintingGallery";
 
 const GallerySectionLayout = ({
+  id,
   className,
   title,
   subtitle,
@@ -11,7 +12,7 @@ const GallerySectionLayout = ({
   routeBase
 }) => {
   return (
-    <article className={`gallery-section-layout ${className || ""}`}>
+    <article id={id} className={`gallery-section-layout ${className || ""}`}>
       {title && <h2>{title}</h2>}
       {subtitle && <h3>{subtitle}</h3>}
       {description && <p>{description}</p>}

@@ -38,7 +38,8 @@ const CompleteWork = () => {
   });
 
   return (
-    <section className="site-complete-work">
+    <section id="obra-completa" className="site-complete-work">
+      {/* <h2>La obra completa</h2> */}
       {filteredData.map((category) => (
         <section
           id={category.slug}
@@ -59,6 +60,7 @@ const CompleteWork = () => {
           {category.subcategories?.map(
             ({ id, slug, title, description, images, path }) => (
               <GallerySectionLayout
+                id={slug}
                 key={id}
                 className={`subcategory-${slug}`}
                 subtitle={title}

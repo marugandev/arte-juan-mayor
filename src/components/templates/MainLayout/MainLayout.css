@@ -1,0 +1,4 @@
+.site-main {
+  flex-grow: 1;
+  padding: var(--ajm-space-lg);
+}

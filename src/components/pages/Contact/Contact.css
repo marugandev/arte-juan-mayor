@@ -1,3 +1,7 @@
+#contacto {
+  scroll-margin-top: var(--ajm-space-xl);
+}
+
 .site-contact {
   margin-left: auto;
   text-align: end;
@@ -8,9 +12,16 @@
   background-color: var(--ajm-accent);
   border: none;
   user-select: text;
+  padding: var(--ajm-space-md);
 }
 
 /* .site-contact-link:hover {
   border: 2px solid var(--ajm-accent);
   background-color: transparent;
 } */
+
+@media (max-width: 1000px) {
+  .site-contact {
+    width: 100%;
+  }
+}

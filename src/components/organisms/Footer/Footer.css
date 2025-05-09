@@ -1,0 +1,12 @@
+.site-footer {
+  display: flex;
+  justify-content: end;
+  gap: var(--ajm-space-xs);
+  font-size: var(--ajm-font-sm);
+  color: var(--ajm-text-primary);
+  padding: var(--ajm-space-md) var(--ajm-space-lg);
+}
+
+.site-footer-logo {
+  width: 30px;
+}

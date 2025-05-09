@@ -3,7 +3,7 @@ import Quote from "../../molecules/Quote/Quote";
 
 const ArtisticProject = () => {
   return (
-    <section className="site-artistic-project">
+    <section id="proyecto-artistico" className="site-artistic-project">
       <div className="text column-newspaper">
         <h2 className="title">Proyecto artístico</h2>
         <p>

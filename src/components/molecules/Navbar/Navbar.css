@@ -1,5 +1,20 @@
+#proyecto-artistico,
+#los-inicios,
+#obra-completa,
+#realismo-figurativo,
+#retratos,
+#representaciones-de-la-naturaleza,
+#realismo-abstracto,
+#representaciones-de-la-naturaleza-que-insinuan-abstracciones,
+#representaciones-abstractas-inspiradas-en-representaciones-de-la-realidad,
+#representaciones-abstractas-y-geometricas,
+#representaciones-mixtas-combinacion-de-elementos-abstractos-y-figurativos-reales,
+#copias-de-pintores-reconocidos {
+  scroll-margin-top: var(--ajm-space-xl);
+}
+
 .navbar {
-  line-height: 2.5;
+  line-height: var(--ajm-line-height-lg);
 }
 
 .navbar ul {
@@ -13,23 +28,28 @@
   transition-delay: 0.4s;
 }
 
+.navbar .list-item .active::after {
+  content: " ▪︎";
+  color: var(--ajm-dark-gray);
+}
+
 .navbar .list-item:hover {
   background-color: var(--ajm-accent);
   transition: all 0.4s ease;
   cursor: pointer;
 }
 
-.navbar .list-item > .nav-link {
+.navbar .list-item > .link {
   display: block;
 }
 
-/* .nav-link.active {
+/* .link.active {
   background-color: var(--ajm-accent-hover);
 } */
 
 @media (max-width: 768px) {
   .navbar {
-    line-height: 2;
+    line-height: var(--ajm-line-height-base);
   }
   .navbar .list-item {
     margin-left: 0;

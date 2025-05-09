@@ -1,13 +1,18 @@
 import "./Navbar.css";
 
+import { useNavigate, useLocation } from "react-router-dom";
 import { navRoutes } from "../../../routes/navRoutes";
-import { NavLink, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleClick = (path) => {
     navigate(path);
+  };
+
+  const isActive = (path) => {
+    return location.pathname === path || location.pathname.startsWith(path);
   };
 
   return (
@@ -19,13 +24,13 @@ const Navbar = () => {
             key={route.id}
             onClick={() => handleClick(route.path)}
           >
-            <NavLink
-              className="nav-link"
-              to={route.path}
+            <a
+              className={`link ${isActive(route.path) ? "active" : ""}`}
+              href={route.path}
               style={{ marginLeft: `${route.level * 1.5}rem` }}
             >
               {route.title}
-            </NavLink>
+            </a>
           </li>
         ))}
       </ul>

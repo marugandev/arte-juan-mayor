@@ -1,7 +1,8 @@
 import "./App.css";
 
 import { Route, Routes } from "react-router-dom";
-import MainLayout from "./components/templates/MainLayout";
+
+import MainLayout from "./components/templates/MainLayout/MainLayout";
 import CompleteWork from "./components/pages/CompleteWork/CompleteWork";
 import ArtisticProject from "./components/pages/ArtisticProject/ArtisticProject";
 import TheBeginnings from "./components/pages/TheBeginnings/TheBeginnings";

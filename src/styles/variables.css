@@ -53,7 +53,9 @@
   --ajm-font-extrabold: 800;
   --ajm-font-black: 900;
   /* line-height */
+  --ajm-line-height-lg: 2.2;
   --ajm-line-height-base: 1.8;
+  --ajm-line-height-md: 1.5;
 
   /* spacings */
   /* spacings --paddings, --margins, --gaps */

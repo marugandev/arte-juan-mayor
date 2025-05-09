@@ -1,0 +1,23 @@
+import "./Footer.css";
+
+const Footer = () => {
+  return (
+    <footer className="site-footer">
+      <p>{new Date().getFullYear()} © artejuanmayor | Creado por</p>
+      <a
+        className="site-footer-link"
+        href="https://marugandev.vercel.app/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          className="site-footer-logo"
+          src="https://res.cloudinary.com/cloudcloudinary0/image/upload/v1746776603/logo_marugandev.svg"
+          alt="logo marugandev"
+        />
+      </a>
+    </footer>
+  );
+};
+
+export default Footer;
