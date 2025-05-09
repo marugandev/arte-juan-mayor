@@ -13,6 +13,7 @@ const PaintingGallery = ({ images, routeBase, allVisibleImages }) => {
   const [selectedIndex, setSelectedIndex] = useState(null);
 
   const modalImages = allVisibleImages || images;
+  console.log("all", allVisibleImages);
 
   const openModal = (index) => {
     const imageId = images[index].id;

@@ -19,6 +19,7 @@ const CompleteWork = () => {
     : completeWorkData;
 
   const allImages = [];
+  console.log("alls", allImages);
 
   completeWorkData.forEach((cat) => {
     if (!paramCategory || cat.slug === paramCategory) {
@@ -39,7 +40,7 @@ const CompleteWork = () => {
 
   return (
     <section id="obra-completa" className="site-complete-work">
-      {/* <h2>La obra completa</h2> */}
+      {!paramCategory && !paramSub && <h2>La obra completa</h2>}
       {filteredData.map((category) => (
         <section
           id={category.slug}

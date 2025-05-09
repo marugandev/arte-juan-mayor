@@ -23,6 +23,7 @@ body {
   font-weight: var(--ajm-font-light);
   font-size: var(--ajm-font-base);
   line-height: var(--ajm-line-height-base);
+  background-color: var(--ajm-bg-primary);
 }
 
 ul,

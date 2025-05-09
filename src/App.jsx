@@ -15,15 +15,13 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<MainLayout />}>
-          <Route
-            path="/proyecto-artistico"
-            element={<ArtisticProject />}
-          ></Route>
+          <Route path="/proyecto-artistico" element={<ArtisticProject />} />
           <Route path="/los-inicios" element={<TheBeginnings />}>
-            <Route path=":id" element={<TheBeginnings />}></Route>
+            <Route path=":id" element={<TheBeginnings />} />
           </Route>
 
-          <Route index element={<CompleteWork />}></Route>
+          <Route index element={<CompleteWork />} />
+          <Route path="/obra-completa/:id" element={<CompleteWork />}></Route>
           <Route path="/obra-completa" element={<CompleteWork />}>
             <Route path=":category" element={<CompleteWork />}>
               <Route path=":subcategory" element={<CompleteWork />}>
@@ -32,9 +30,9 @@ function App() {
             </Route>
           </Route>
 
-          <Route path="/juan-mayor" element={<About />}></Route>
-          <Route path="/contacto" element={<Contact />}></Route>
-          <Route path="*" element={<NotFound />}></Route>
+          <Route path="/juan-mayor" element={<About />} />
+          <Route path="/contacto" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </>

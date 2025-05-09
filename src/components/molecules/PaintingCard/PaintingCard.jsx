@@ -1,6 +1,5 @@
 import "./PaintingCard.css";
 
-/* react.memo */
 const PaintingCard = ({ image, onClick }) => {
   console.log("Painting Card");
 

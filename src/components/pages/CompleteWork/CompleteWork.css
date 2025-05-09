@@ -1,0 +1,9 @@
+/* .site-complete-work > section:nth-child(odd) {
+  background-color: var(--ajm-bg-primary);
+  padding: 0;
+}
+
+.site-complete-work > section:nth-child(even) {
+  background-color: var(--ajm-accent);
+}
+ */

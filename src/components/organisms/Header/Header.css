@@ -3,6 +3,14 @@
   justify-content: space-between;
   align-items: start;
   padding: var(--ajm-space-lg);
+  gap: var(--ajm-space-lg);
+}
+
+.video-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: var(--ajm-space-lg);
 }
 
 .nav-container {

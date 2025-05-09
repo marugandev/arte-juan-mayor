@@ -9,7 +9,8 @@ const GallerySectionLayout = ({
   description,
   note,
   images,
-  routeBase
+  routeBase,
+  allVisibleImages
 }) => {
   return (
     <article id={id} className={`gallery-section-layout ${className || ""}`}>
@@ -17,7 +18,11 @@ const GallerySectionLayout = ({
       {subtitle && <h3>{subtitle}</h3>}
       {description && <p>{description}</p>}
       {note && <Note />}
-      <PaintingGallery images={images} routeBase={routeBase} />
+      <PaintingGallery
+        images={images}
+        routeBase={routeBase}
+        allVisibleImages={allVisibleImages}
+      />
     </article>
   );
 };
