@@ -1,13 +1,17 @@
 import "./CompleteWork.css";
 
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { completeWorkData } from "../../../data/completeWorkData";
 import GallerySectionLayout from "../../templates/GallerySectionLayout";
 
 const CompleteWork = () => {
-  const { category: paramCategory, subcategory: paramSub } = useParams();
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
 
-  const filteredData = paramCategory
+  const paramCategory = queryParams.get("category");
+  const paramSub = queryParams.get("subcategory");
+
+  /*   const filteredData = paramCategory
     ? completeWorkData
         .filter((cat) => cat.slug === paramCategory)
         .map((cat) => ({
@@ -16,9 +20,9 @@ const CompleteWork = () => {
             ? cat.subcategories?.filter((sub) => sub.slug === paramSub)
             : cat.subcategories
         }))
-    : completeWorkData;
+    : completeWorkData; */
 
-  const allImages = [];
+   const allImages = [];
   console.log("alls", allImages);
 
   completeWorkData.forEach((cat) => {
@@ -41,7 +45,7 @@ const CompleteWork = () => {
   return (
     <section id="obra-completa" className="site-complete-work">
       {!paramCategory && !paramSub && <h2>La obra completa</h2>}
-      {filteredData.map((category) => (
+      {completeWorkData.map((category) => (
         <section
           id={category.slug}
           key={category.id}
@@ -59,7 +63,7 @@ const CompleteWork = () => {
             />
           )}
           {category.subcategories?.map(
-            ({ id, slug, title, description, images, path }) => (
+            ({ id, slug, title, description, images, subCategory }) => (
               <GallerySectionLayout
                 id={slug}
                 key={id}
@@ -68,7 +72,7 @@ const CompleteWork = () => {
                 description={description}
                 note
                 images={images}
-                routeBase={path}
+                routeBase={`/obra-completa?category=${category.category}&subcategory=${subCategory}`}
                 allVisibleImages={allImages}
               />
             )

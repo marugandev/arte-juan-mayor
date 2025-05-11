@@ -1,8 +1,6 @@
 import "./PaintingCard.css";
 
 const PaintingCard = ({ image, onClick }) => {
-  console.log("Painting Card");
-
   const { src, alt = "painting", title, year, author } = image;
 
   return (

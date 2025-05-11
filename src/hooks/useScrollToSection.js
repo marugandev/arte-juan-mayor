@@ -3,13 +3,12 @@ import { useEffect } from "react";
 
 export const useScrollToSection = () => {
   const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const paramSub = queryParams.get("subcategory");
 
   useEffect(() => {
     const scrollToSection = () => {
-      const pathSections = location.pathname.split("/");
-      const sectionId = pathSections[pathSections.length - 1];
-
-      const el = document.getElementById(sectionId);
+      const el = document.getElementById(paramSub);
       if (el) {
         el.scrollIntoView();
       }
