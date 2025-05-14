@@ -17,17 +17,17 @@ function App() {
         <Route path="/" element={<MainLayout />}>
           <Route path="/proyecto-artistico" element={<ArtisticProject />} />
           <Route path="/los-inicios" element={<TheBeginnings />}>
-            <Route path=":id" element={<TheBeginnings />} />
+            {/* <Route path=":id" element={<TheBeginnings />} /> */}
           </Route>
 
           <Route index element={<CompleteWork />} />
-          <Route path="/obra-completa/:id" element={<CompleteWork />}></Route>
+          {/* <Route path="/obra-completa/:id" element={<CompleteWork />}></Route> */}
           <Route path="/obra-completa" element={<CompleteWork />}>
-            <Route path=":category" element={<CompleteWork />}>
+            {/*  <Route path=":category" element={<CompleteWork />}>
               <Route path=":subcategory" element={<CompleteWork />}>
                 <Route path=":id" element={<CompleteWork />}></Route>
               </Route>
-            </Route>
+            </Route> */}
           </Route>
 
           <Route path="/juan-mayor" element={<About />} />

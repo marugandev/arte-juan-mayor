@@ -1,60 +1,68 @@
 import "./PaintingGallery.css";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import PaintingCard from "../../molecules/PaintingCard/PaintingCard";
 import ModalGallery from "../../molecules/ModalGallery/ModalGallery";
-import { useNavigate, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useQueryParams } from "../../../hooks/useQueryParams";
+import { useModalGallery } from "../../../context/ModalGalleryContext";
 
 const PaintingGallery = ({ images, routeBase, allVisibleImages }) => {
-  const { id } = useParams();
+  const { imageId } = useQueryParams();
   const navigate = useNavigate();
 
-  const [isModalOpen, setModalOpen] = useState(false);
-  const [selectedIndex, setSelectedIndex] = useState(null);
+  const {
+    isModalOpen,
+    modalImages,
+    currentIndex,
+    setCurrentIndex,
+    openModal,
+    closeModal
+  } = useModalGallery();
 
-  const modalImages = allVisibleImages || images;
-  console.log("all", allVisibleImages);
+  const visibleImages = allVisibleImages || images;
+  console.log("visibleImages", visibleImages);
 
-  const openModal = (index) => {
-    const imageId = images[index].id;
-    const globalIndex = modalImages.findIndex((img) => img.id === imageId);
-    setSelectedIndex(globalIndex);
-    setModalOpen(true);
-    console.log(routeBase);
+  const handleImageClick = (clickedImageId) => {
+    const index = visibleImages.findIndex((img) => img.id === clickedImageId);
+    console.log("indexCLICK", index);
 
-    navigate(`${routeBase}&id=${modalImages[globalIndex].id}`);
+    if (index === -1) return;
+
+    openModal(visibleImages, index);
+    navigate(`${routeBase}&id=${clickedImageId}`);
   };
 
-  const closeModal = () => {
-    setModalOpen(false);
+  const handleCloseModal = () => {
+    closeModal();
     navigate(routeBase);
   };
 
   useEffect(() => {
-    if (id) {
-      const foundIndex = modalImages.findIndex((img) => img.id === id);
-      if (foundIndex !== -1) {
-        setSelectedIndex(foundIndex);
-        setModalOpen(true);
+    if (imageId) {
+      const index = visibleImages.findIndex((img) => img.id === imageId);
+      if (index !== -1) {
+        openModal(visibleImages, index);
       }
     }
-  }, [id, modalImages]);
+  }, [imageId, visibleImages]);
 
   return (
     <section className="painting-gallery">
-      {images.map((image, index) => (
+      {images?.map((image) => (
         <PaintingCard
           key={image.id}
           image={image}
-          onClick={() => openModal(index)}
+          onClick={() => handleImageClick(image.id)}
         />
       ))}
-      {isModalOpen && (
+
+      {isModalOpen && currentIndex !== null && (
         <ModalGallery
-          closeModal={closeModal}
+          closeModal={handleCloseModal}
           images={modalImages}
-          currentIndex={selectedIndex}
-          setCurrentIndex={setSelectedIndex}
+          currentIndex={currentIndex}
+          setCurrentIndex={setCurrentIndex}
           routeBase={routeBase}
         />
       )}

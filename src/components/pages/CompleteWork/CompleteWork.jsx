@@ -1,83 +1,43 @@
 import "./CompleteWork.css";
-
-import { useLocation } from "react-router-dom";
-import { completeWorkData } from "../../../data/completeWorkData";
 import GallerySectionLayout from "../../templates/GallerySectionLayout";
+import { useFilteredCompleteWorkData } from "../../../hooks/useFilteredCompleteWorkData";
 
 const CompleteWork = () => {
-  const location = useLocation();
-  const queryParams = new URLSearchParams(location.search);
-
-  const paramCategory = queryParams.get("category");
-  const paramSub = queryParams.get("subcategory");
-
-  /*   const filteredData = paramCategory
-    ? completeWorkData
-        .filter((cat) => cat.slug === paramCategory)
-        .map((cat) => ({
-          ...cat,
-          subcategories: paramSub
-            ? cat.subcategories?.filter((sub) => sub.slug === paramSub)
-            : cat.subcategories
-        }))
-    : completeWorkData; */
-
-   const allImages = [];
-  console.log("alls", allImages);
-
-  completeWorkData.forEach((cat) => {
-    if (!paramCategory || cat.slug === paramCategory) {
-      if (cat.images) {
-        allImages.push(...cat.images);
-      }
-      if (cat.subcategories) {
-        cat.subcategories.forEach((sub) => {
-          if (!paramSub || sub.slug === paramSub) {
-            if (sub.images) {
-              allImages.push(...sub.images);
-            }
-          }
-        });
-      }
-    }
-  });
+  const { category, subcategory, filteredCategories, visibleImages } =
+    useFilteredCompleteWorkData();
+  console.log("filteredCategoriesInCompleteWork", filteredCategories);
+  console.log("visibleImagesInCompleteWork", visibleImages);
 
   return (
     <section id="obra-completa" className="site-complete-work">
-      {!paramCategory && !paramSub && <h2>La obra completa</h2>}
-      {completeWorkData.map((category) => (
-        <section
-          id={category.slug}
-          key={category.id}
-          className={`category-${category.slug}`}
+      {!category && !subcategory && <h2>La obra completa</h2>}
+
+      {filteredCategories.map((cat) => (
+        <GallerySectionLayout
+          key={cat.id}
+          id={`images-${cat.slug}`}
+          className={`category-${cat.slug}`}
+          title={cat.title}
+          description={cat.description}
+          note={cat.subcategories?.length === 0}
+          images={cat.images}
+          routeBase={`/obra-completa?category=${cat.category}`}
+          allVisibleImages={visibleImages}
         >
-          <h2>{category.title}</h2>
-          {category.description && <p>{category.description}</p>}
-          {category.images?.length > 0 && (
+          {cat.subcategories?.map((sub) => (
             <GallerySectionLayout
-              className={`category-images-${category.slug}`}
+              key={sub.id}
+              id={`images-${sub.slug}`}
+              className={`subcategory-${sub.slug}`}
+              subtitle={sub.title}
+              description={sub.description}
               note
-              images={category.images}
-              routeBase={category.path}
-              allVisibleImages={allImages}
+              images={sub.images}
+              routeBase={`/obra-completa?category=${cat.category}&subcategory=${sub.subCategory}`}
+              allVisibleImages={visibleImages}
             />
-          )}
-          {category.subcategories?.map(
-            ({ id, slug, title, description, images, subCategory }) => (
-              <GallerySectionLayout
-                id={slug}
-                key={id}
-                className={`subcategory-${slug}`}
-                subtitle={title}
-                description={description}
-                note
-                images={images}
-                routeBase={`/obra-completa?category=${category.category}&subcategory=${subCategory}`}
-                allVisibleImages={allImages}
-              />
-            )
-          )}
-        </section>
+          ))}
+        </GallerySectionLayout>
       ))}
     </section>
   );

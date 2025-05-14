@@ -4,8 +4,6 @@ import { theBeginningsData } from "../../../data/theBeginningsData";
 import GallerySectionLayout from "../../templates/GallerySectionLayout";
 
 const TheBeginnings = () => {
-  console.log("the Beginnings");
-
   const { title, subtitle, description, slug, path } = theBeginningsData[0];
 
   const images = theBeginningsData.flatMap((i) => i.images);
@@ -17,7 +15,7 @@ const TheBeginnings = () => {
         subtitle={subtitle}
         description={description}
         images={images}
-        note={true}
+        note
         routeBase={path}
       ></GallerySectionLayout>
     </section>

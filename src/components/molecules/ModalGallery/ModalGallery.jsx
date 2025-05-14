@@ -11,20 +11,24 @@ const ModalGallery = ({
 }) => {
   const navigate = useNavigate();
   const image = images[currentIndex];
-  const { src, alt = "painting" } = image;
+
+  if (!image) return null;
+  const { src, alt = "painting", id } = image;
+
+  const goToIndex = (index, e) => {
+    e?.stopPropagation();
+    setCurrentIndex(index);
+    navigate(`${routeBase}&id=${images[index].id}`);
+  };
 
   const goPrev = (e) => {
-    e.stopPropagation();
-    const newIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
-    setCurrentIndex(newIndex);
-    navigate(`${routeBase}/${images[newIndex].id}`);
+    const prevIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
+    goToIndex(prevIndex, e);
   };
 
   const goNext = (e) => {
-    e.stopPropagation();
-    const newIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
-    setCurrentIndex(newIndex);
-    navigate(`${routeBase}/${images[newIndex].id}`);
+    const nextIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
+    goToIndex(nextIndex, e);
   };
 
   useEffect(() => {
@@ -39,14 +43,11 @@ const ModalGallery = ({
     };
 
     window.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [currentIndex, closeModal]);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [currentIndex]);
 
   return (
-    <div className="modal-gallery overlay">
+    <div className="modal-gallery overlay" onClick={closeModal}>
       <div className="modal-gallery" onClick={(e) => e.stopPropagation()}>
         <img src={src} alt={alt} />
         <button className="modal-button close" onClick={closeModal}>

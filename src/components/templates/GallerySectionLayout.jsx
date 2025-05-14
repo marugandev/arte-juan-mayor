@@ -10,19 +10,26 @@ const GallerySectionLayout = ({
   note,
   images,
   routeBase,
-  allVisibleImages
+  allVisibleImages,
+  children
 }) => {
+  console.log("imagesInSectionLayout", images);
+  console.log("allimagesInSectionLayout", allVisibleImages);
+
   return (
     <article id={id} className={`gallery-section-layout ${className || ""}`}>
       {title && <h2>{title}</h2>}
       {subtitle && <h3>{subtitle}</h3>}
       {description && <p>{description}</p>}
       {note && <Note />}
-      <PaintingGallery
-        images={images}
-        routeBase={routeBase}
-        allVisibleImages={allVisibleImages}
-      />
+      {images?.length > 0 && (
+        <PaintingGallery
+          images={images}
+          routeBase={routeBase}
+          allVisibleImages={allVisibleImages}
+        />
+      )}
+      {children}
     </article>
   );
 };

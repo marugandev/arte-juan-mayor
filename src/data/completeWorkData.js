@@ -4,8 +4,8 @@ export const completeWorkData = [
     order: 1,
     title: "1. Realismo figurativo",
     slug: "realismo-figurativo",
-    path: "/obra-completa",
     category: "realismo-figurativo",
+    path: "/obra-completa",
     subcategories: [
       {
         id: 2,
@@ -296,7 +296,8 @@ export const completeWorkData = [
         description:
           "Se incluyen desiertos, ríos y lagos, mares, rocas, troncos y hojas y construcciones.",
         slug: "representaciones-de-la-naturaleza-que-insinuan-abstracciones",
-        subCategory: "representaciones-de-la-naturaleza-que-insinuan-abstracciones",
+        subCategory:
+          "representaciones-de-la-naturaleza-que-insinuan-abstracciones",
         images: [
           {
             id: "abstraccion-1",
@@ -438,7 +439,8 @@ export const completeWorkData = [
         description:
           "Se incluyen paisajes, rocas, plantas, animales, objetos y construcciones, imágenes microscópicas y telescópicas.",
         slug: "representaciones-abstractas-inspiradas-en-representaciones-de-la-realidad",
-        path: "/obra-completa/realismo-abstracto/representaciones-abstractas-inspiradas-en-representaciones-de-la-realidad",
+        subCategory:
+          "representaciones-abstractas-inspiradas-en-representaciones-de-la-realidad",
         images: [
           {
             id: "abstraccion-realidad-1",
@@ -556,7 +558,7 @@ export const completeWorkData = [
     description:
       "Representaciones abstractas y geometricas en diterentes estilos y estructuras.",
     slug: "representaciones-abstractas-y-geometricas",
-    path: "/obra-completa/representaciones-abstractas-y-geometricas",
+    category: "representaciones-abstractas-y-geometricas",
     images: [
       {
         id: "geometrica-1",
@@ -653,7 +655,8 @@ export const completeWorkData = [
     description:
       "Se incluyen combinaciones de elementos abstractos y figurativos.",
     slug: "representaciones-mixtas-combinacion-de-elementos-abstractos-y-figurativos-reales",
-    path: "/obra-completa/representaciones-mixtas-combinacion-de-elementos-abstractos-y-figurativos-reales",
+    category:
+      "representaciones-mixtas-combinacion-de-elementos-abstractos-y-figurativos-reales",
     images: [
       {
         id: "mixta-1",
@@ -698,7 +701,7 @@ export const completeWorkData = [
     title: "5. Copias de pintores reconocidos",
     description: "Se incluyen versiones de obras de pintores reconocidos.",
     slug: "copias-de-pintores-reconocidos",
-    path: "/obra-completa/copias-de-pintores-reconocidos",
+    category: "copias-de-pintores-reconocidos",
     images: [
       {
         id: "copias-1",

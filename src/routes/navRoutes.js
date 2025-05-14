@@ -26,7 +26,7 @@ export const navRoutes = [
     order: 1,
     title: `1. Realismo figurativo`,
     slug: "realismo-figurativo",
-    path: "/obra-completa/realismo-figurativo",
+    path: "/obra-completa?category=realismo-figurativo",
     level: 1
   },
   {
@@ -34,7 +34,7 @@ export const navRoutes = [
     order: 1.1,
     title: `1.1. Retratos`,
     slug: "retratos",
-    path: "/obra-completa/realismo-figurativo/retratos",
+    path: "/obra-completa?category=realismo-figurativo&subcategory=retratos",
     level: 2
   },
   {
@@ -42,7 +42,7 @@ export const navRoutes = [
     order: 1.2,
     title: `1.2. Representaciones de la naturaleza (De la realidad)`,
     slug: "representaciones-de-la-naturaleza",
-    path: "/obra-completa/realismo-figurativo/representaciones-de-la-naturaleza",
+    path: "/obra-completa?category=realismo-figurativo&subcategory=representaciones-de-la-naturaleza",
     level: 2
   },
   {
@@ -50,7 +50,7 @@ export const navRoutes = [
     order: 2,
     title: `2. Realismo-abstracto`,
     slug: "realismo-abstracto",
-    path: "/obra-completa/realismo-abstracto",
+    path: "/obra-completa?category=realismo-abstracto",
     level: 1
   },
   {
@@ -58,7 +58,7 @@ export const navRoutes = [
     order: 2.1,
     title: `2.1. Representaciones de la naturaleza que insinuan abstracciones`,
     slug: "representaciones-de-la-naturaleza-que-insinuan-abstracciones",
-    path: "/obra-completa/realismo-abstracto/representaciones-de-la-naturaleza-que-insinuan-abstracciones",
+    path: "/obra-completa?category=realismo-abstracto&subcategory=representaciones-de-la-naturaleza-que-insinuan-abstracciones",
     level: 2
   },
   {
@@ -66,7 +66,7 @@ export const navRoutes = [
     order: 2.2,
     title: `2.2. Representaciones de la naturaleza inspiradas en representaciones de la realidad`,
     slug: "representaciones-abstractas-inspiradas-en-representaciones-de-la-realidad",
-    path: "/obra-completa/realismo-abstracto/representaciones-abstractas-inspiradas-en-representaciones-de-la-realidad",
+    path: "/obra-completa?category=realismo-abstracto&subcategory=representaciones-abstractas-inspiradas-en-representaciones-de-la-realidad",
     level: 2
   },
   {
@@ -74,7 +74,7 @@ export const navRoutes = [
     order: 3,
     title: `3. Representaciones abstractas y geométricas`,
     slug: "representaciones-abstractas-y-geometricas",
-    path: "/obra-completa/representaciones-abstractas-y-geometricas",
+    path: "/obra-completa?category=representaciones-abstractas-y-geometricas",
     level: 1
   },
   {
@@ -82,7 +82,7 @@ export const navRoutes = [
     order: 4,
     title: `4. Representaciones mixtas (Combinación de elementos abstractos y figurativos reales)`,
     slug: "representaciones-mixtas-combinacion-de-elementos-abstractos-y-figurativos-reales",
-    path: "/obra-completa/representaciones-mixtas-combinacion-de-elementos-abstractos-y-figurativos-reales",
+    path: "/obra-completa?category=representaciones-mixtas-combinacion-de-elementos-abstractos-y-figurativos-reales",
     level: 1
   },
   {
@@ -90,7 +90,7 @@ export const navRoutes = [
     order: 5,
     title: `5. Copias de pintores reconocidos`,
     slug: "copias-de-pintores-reconocidos",
-    path: "/obra-completa/copias-de-pintores-reconocidos",
+    path: "/obra-completa?category=copias-de-pintores-reconocidos",
     level: 1
   }
 ];

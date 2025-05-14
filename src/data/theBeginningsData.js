@@ -6,6 +6,7 @@ export const theBeginningsData = [
     description:
       "Dibujos (lápiz y tinta) y pinturas (ceras, acuarelas y óleos) que se realizaron en los primeros años.",
     slug: "los-inicios",
+    category: "los-inicios",
     path: "/los-inicios",
     images: [
       {

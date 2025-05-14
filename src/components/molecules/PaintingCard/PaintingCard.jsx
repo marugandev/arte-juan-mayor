@@ -5,7 +5,7 @@ const PaintingCard = ({ image, onClick }) => {
 
   return (
     <figure className="painting-card" onClick={onClick}>
-      <img src={src} alt={alt} loading="lazy"></img>
+      <img src={src} alt={alt} loading="lazy" />
       {(title || year || author) && (
         <figcaption className="figcaption">
           {title && <span>{title}</span>}
