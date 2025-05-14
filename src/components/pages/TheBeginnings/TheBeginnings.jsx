@@ -4,12 +4,12 @@ import { theBeginningsData } from "../../../data/theBeginningsData";
 import GallerySectionLayout from "../../templates/GallerySectionLayout";
 
 const TheBeginnings = () => {
-  const { title, subtitle, description, category } = theBeginningsData[0];
+  const { title, subtitle, description, slug } = theBeginningsData[0];
 
   const images = theBeginningsData.flatMap((i) => i.images);
 
   return (
-    <section id={category} className="site-the-beginnings">
+    <section id={slug} className="site-the-beginnings">
       <GallerySectionLayout
         title={title}
         subtitle={subtitle}

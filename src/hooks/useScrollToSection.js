@@ -1,20 +1,22 @@
-import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { useQueryParams } from "./useQueryParams";
 
 export const useScrollToSection = () => {
   const location = useLocation();
-  const queryParams = new URLSearchParams(location.search);
-  const categoryParams = queryParams.get("category");
-  /* const subcategoryParams = queryParams.get("subcategory"); */
+  const { baseLocation, category } = useQueryParams();
 
   useEffect(() => {
-    const scrollToSection = () => {
-      const el = document.getElementById(categoryParams);
+    const elementId = category || baseLocation;
+    if (!elementId) return;
+
+    const timeout = setTimeout(() => {
+      const el = document.getElementById(elementId);
       if (el) {
         el.scrollIntoView();
       }
-    };
+    }, 50);
 
-    scrollToSection();
-  }, [location]);
+    return () => clearTimeout(timeout);
+  }, [location.pathname, category]);
 };

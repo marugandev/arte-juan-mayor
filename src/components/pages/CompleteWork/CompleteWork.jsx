@@ -16,7 +16,7 @@ const CompleteWork = () => {
       {filteredCategories.map((cat) => (
         <GallerySectionLayout
           key={cat.id}
-          id={`images-${cat.slug}`}
+          id={`${cat.slug}`}
           className={`category-${cat.slug}`}
           title={cat.title}
           description={cat.description}
@@ -26,7 +26,7 @@ const CompleteWork = () => {
           {cat.subcategories?.map((sub) => (
             <GallerySectionLayout
               key={sub.id}
-              id={`images-${sub.slug}`}
+              id={`${sub.slug}`}
               className={`subcategory-${sub.slug}`}
               subtitle={sub.title}
               description={sub.description}
