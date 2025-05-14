@@ -1,6 +1,6 @@
 .scroll-top {
   position: fixed;
-  bottom: var(--ajm-space-xl);
+  bottom: var(--ajm-space-3xl);
   right: var(--ajm-space-lg);
   display: flex;
   justify-content: center;
