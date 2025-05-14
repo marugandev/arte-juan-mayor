@@ -67,10 +67,12 @@ const ModalGallery = ({
         </button>
         <div className="modal-controls">
           <button className="modal-button prev" onClick={goPrev}>
-            ← Anterior
+            <span className="arrow">←</span>
+            <span className="text">Anterior</span>
           </button>
           <button className="modal-button next" onClick={goNext}>
-            Siguiente →
+            <span className="text">Siguiente</span>
+            <span className="arrow">→</span>
           </button>
         </div>
       </div>

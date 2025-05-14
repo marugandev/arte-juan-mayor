@@ -51,6 +51,8 @@
 }
 
 .modal-gallery .modal-controls {
+  /*  position: absolute;
+  bottom: var(--ajm-space-lg); */
   display: flex;
   justify-content: center;
   gap: var(--ajm-space-md);
