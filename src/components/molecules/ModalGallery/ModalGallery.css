@@ -21,6 +21,7 @@
   gap: var(--ajm-space-md);
   padding-bottom: var(--ajm-space-md);
   /*   background-color: rgb(67, 202, 233); */
+  position: relative;
 }
 
 .modal-gallery img {
@@ -62,6 +63,7 @@
   border: 1px solid var(--ajm-accent);
   transition: all 0.4s ease;
   position: relative;
+  /*  max-width: 100%; */
   width: 300px;
   height: 48px;
 }
@@ -94,4 +96,14 @@
   color: var(--ajm-text-primary);
   border: 1px solid transparent;
   background-color: var(--ajm-accent);
+}
+
+@media (max-width: 768px) {
+  .modal-gallery .modal-controls {
+    max-width: 100%;
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
