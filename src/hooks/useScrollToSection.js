@@ -4,10 +4,11 @@ import { useQueryParams } from "./useQueryParams";
 
 export const useScrollToSection = () => {
   const location = useLocation();
-  const { baseLocation, category } = useQueryParams();
+  const { baseLocation, category, subcategory, imageId } = useQueryParams();
 
   useEffect(() => {
-    const elementId = category || baseLocation;
+    const elementId = subcategory || category || baseLocation;
+
     if (!elementId) return;
 
     const timeout = setTimeout(() => {
@@ -18,5 +19,5 @@ export const useScrollToSection = () => {
     }, 50);
 
     return () => clearTimeout(timeout);
-  }, [location.pathname, category]);
+  }, [location.pathname, category, subcategory, imageId]);
 };
