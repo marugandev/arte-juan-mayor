@@ -1,51 +1,93 @@
 import "./PaintingGallery.css";
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 
+import { useQueryParams } from "../../../hooks/useQueryParams";
+import { useEffect, useCallback, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { completeWorkData } from "../../../data/completeWorkData";
+import { theBeginningsData } from "../../../data/theBeginningsData";
+import { useVisibleImages } from "../../../hooks/useVisibleImages";
 import PaintingCard from "../../molecules/PaintingCard/PaintingCard";
 import ModalGallery from "../../molecules/ModalGallery/ModalGallery";
-import { useQueryParams } from "../../../hooks/useQueryParams";
-import { useModalGallery } from "../../../context/ModalGalleryContext";
 
-const PaintingGallery = ({ images, routeBase, allVisibleImages }) => {
-  const { imageId } = useQueryParams();
+const PaintingGallery = ({ images }) => {
+  const { baseLocation, category, imageId } = useQueryParams();
   const navigate = useNavigate();
 
-  const {
-    isModalOpen,
-    modalImages,
-    currentIndex,
-    setCurrentIndex,
-    openModal,
-    closeModal
-  } = useModalGallery();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalImages, setModalImages] = useState([]);
+  const [currentImageId, setCurrentImageId] = useState(null);
 
-  const visibleImages = allVisibleImages || images;
-  console.log("visibleImages", visibleImages);
+  const data =
+    baseLocation === "obra-completa" ? completeWorkData : theBeginningsData;
 
-  const handleImageClick = (clickedImageId) => {
-    const index = visibleImages.findIndex((img) => img.id === clickedImageId);
-    console.log("indexCLICK", index);
+  const allModalImages =
+    baseLocation === "obra-completa" || baseLocation === "los-inicios"
+      ? useVisibleImages(data, null, null)
+      : useVisibleImages(data, category, null);
 
-    if (index === -1) return;
-
-    openModal(visibleImages, index);
-    navigate(`${routeBase}&id=${clickedImageId}`);
+  const openModal = (imageId) => {
+    setCurrentImageId(imageId);
+    setIsModalOpen(true);
   };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setCurrentImageId(null);
+  };
+
+  const handleImageClick = useCallback(
+    (clickedImageId) => {
+      const clickedImage = allModalImages.find(
+        (img) => img.id === clickedImageId
+      );
+      if (!clickedImage) return;
+
+      const { category, subCategory } = clickedImage;
+
+      openModal(clickedImageId);
+
+      if (subCategory) {
+        navigate(
+          `?category=${category}&subcategory=${subCategory}&id=${clickedImageId}`
+        );
+      } else if (category) {
+        navigate(`?category=${category}&id=${clickedImageId}`);
+      } else {
+        navigate(`?id=${clickedImageId}`);
+      }
+    },
+    [allModalImages, navigate]
+  );
 
   const handleCloseModal = () => {
     closeModal();
-    navigate(routeBase);
+    const clickedImage = allModalImages.find(
+      (img) => img.id === currentImageId
+    );
+    if (clickedImage) {
+      const { category, subCategory } = clickedImage;
+      if (subCategory) {
+        navigate(`?category=${category}&subcategory=${subCategory}`);
+      } else if (category) {
+        navigate(`?category=${category}`);
+      } else {
+        navigate(`/${baseLocation}`);
+      }
+    }
   };
 
   useEffect(() => {
+    setModalImages(allModalImages);
+  }, [allModalImages]);
+
+  useEffect(() => {
     if (imageId) {
-      const index = visibleImages.findIndex((img) => img.id === imageId);
-      if (index !== -1) {
-        openModal(visibleImages, index);
+      const foundImage = allModalImages.find((img) => img.id === imageId);
+      if (foundImage) {
+        openModal(imageId);
       }
     }
-  }, [imageId, visibleImages]);
+  }, [imageId, allModalImages]);
 
   return (
     <section className="painting-gallery">
@@ -56,14 +98,12 @@ const PaintingGallery = ({ images, routeBase, allVisibleImages }) => {
           onClick={() => handleImageClick(image.id)}
         />
       ))}
-
-      {isModalOpen && currentIndex !== null && (
+      {isModalOpen && currentImageId !== null && (
         <ModalGallery
           closeModal={handleCloseModal}
-          images={modalImages}
-          currentIndex={currentIndex}
-          setCurrentIndex={setCurrentIndex}
-          routeBase={routeBase}
+          images={baseLocation === "obra-completa" ? modalImages : images}
+          currentImageId={currentImageId}
+          setCurrentImageId={setCurrentImageId}
         />
       )}
     </section>

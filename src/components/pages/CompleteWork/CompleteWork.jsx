@@ -1,12 +1,13 @@
 import "./CompleteWork.css";
+
+import { useQueryParams } from "../../../hooks/useQueryParams";
+import { useFilteredCategories } from "../../../hooks/useFilteredCategories";
+import { completeWorkData } from "../../../data/completeWorkData";
 import GallerySectionLayout from "../../templates/GallerySectionLayout";
-import { useFilteredCompleteWorkData } from "../../../hooks/useFilteredCompleteWorkData";
 
 const CompleteWork = () => {
-  const { category, subcategory, filteredCategories, visibleImages } =
-    useFilteredCompleteWorkData();
-  console.log("filteredCategoriesInCompleteWork", filteredCategories);
-  console.log("visibleImagesInCompleteWork", visibleImages);
+  const { category, subcategory } = useQueryParams();
+  const filteredCategories = useFilteredCategories(completeWorkData);
 
   return (
     <section id="obra-completa" className="site-complete-work">
@@ -21,8 +22,6 @@ const CompleteWork = () => {
           description={cat.description}
           note={cat.subcategories?.length === 0}
           images={cat.images}
-          routeBase={`/obra-completa?category=${cat.category}`}
-          allVisibleImages={visibleImages}
         >
           {cat.subcategories?.map((sub) => (
             <GallerySectionLayout
@@ -33,8 +32,6 @@ const CompleteWork = () => {
               description={sub.description}
               note
               images={sub.images}
-              routeBase={`/obra-completa?category=${cat.category}&subcategory=${sub.subCategory}`}
-              allVisibleImages={visibleImages}
             />
           ))}
         </GallerySectionLayout>

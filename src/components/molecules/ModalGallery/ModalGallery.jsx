@@ -1,34 +1,46 @@
 import "./ModalGallery.css";
+
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const ModalGallery = ({
   closeModal,
   images,
-  currentIndex,
-  setCurrentIndex,
-  routeBase
+  currentImageId,
+  setCurrentImageId
 }) => {
   const navigate = useNavigate();
-  const image = images[currentIndex];
 
+  const image = images.find((img) => img.id === currentImageId);
   if (!image) return null;
-  const { src, alt = "painting", id } = image;
+  const { src, alt = "painting" } = image;
 
   const goToIndex = (index, e) => {
     e?.stopPropagation();
-    setCurrentIndex(index);
-    navigate(`${routeBase}&id=${images[index].id}`);
+
+    setCurrentImageId(images[index].id);
+
+    const currentImage = images[index];
+
+    const { category, subCategory, id } = currentImage;
+
+    if (subCategory) {
+      navigate(`?category=${category}&subcategory=${subCategory}&id=${id}`);
+    } else if (category) {
+      navigate(`?category=${category}&id=${id}`);
+    } else {
+      navigate(`?id=${id}`);
+    }
   };
 
   const goPrev = (e) => {
-    const prevIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
-    goToIndex(prevIndex, e);
+    const prevIndex = images.findIndex((img) => img.id === currentImageId) - 1;
+    goToIndex(prevIndex < 0 ? images.length - 1 : prevIndex, e);
   };
 
   const goNext = (e) => {
-    const nextIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
-    goToIndex(nextIndex, e);
+    const nextIndex = images.findIndex((img) => img.id === currentImageId) + 1;
+    goToIndex(nextIndex >= images.length ? 0 : nextIndex, e);
   };
 
   useEffect(() => {
@@ -44,31 +56,21 @@ const ModalGallery = ({
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [currentIndex]);
+  }, [currentImageId]);
 
   return (
-    <div className="modal-gallery overlay" onClick={closeModal}>
+    <div className="modal-gallery overlay">
       <div className="modal-gallery" onClick={(e) => e.stopPropagation()}>
         <img src={src} alt={alt} />
         <button className="modal-button close" onClick={closeModal}>
           Cerrar
         </button>
         <div className="modal-controls">
-          <button
-            className="modal-button prev"
-            onClick={goPrev}
-            aria-label="Imagen anterior"
-          >
-            <span className="arrow">←</span>
-            <span className="text">Anterior</span>
+          <button className="modal-button prev" onClick={goPrev}>
+            ← Anterior
           </button>
-          <button
-            className="modal-button next"
-            onClick={goNext}
-            aria-label="Imagen siguiente"
-          >
-            <span className="text">Siguiente</span>
-            <span className="arrow">→</span>
+          <button className="modal-button next" onClick={goNext}>
+            Siguiente →
           </button>
         </div>
       </div>

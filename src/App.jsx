@@ -16,20 +16,9 @@ function App() {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route path="/proyecto-artistico" element={<ArtisticProject />} />
-          <Route path="/los-inicios" element={<TheBeginnings />}>
-            {/* <Route path=":id" element={<TheBeginnings />} /> */}
-          </Route>
-
+          <Route path="/los-inicios" element={<TheBeginnings />} />
           <Route index element={<CompleteWork />} />
-          {/* <Route path="/obra-completa/:id" element={<CompleteWork />}></Route> */}
-          <Route path="/obra-completa" element={<CompleteWork />}>
-            {/*  <Route path=":category" element={<CompleteWork />}>
-              <Route path=":subcategory" element={<CompleteWork />}>
-                <Route path=":id" element={<CompleteWork />}></Route>
-              </Route>
-            </Route> */}
-          </Route>
-
+          <Route path="/obra-completa" element={<CompleteWork />} />
           <Route path="/juan-mayor" element={<About />} />
           <Route path="/contacto" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
