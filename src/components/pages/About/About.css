@@ -35,7 +35,7 @@
   object-position: center;
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1600px) {
   .site-about .text-container.column-newspaper {
     column-count: 2;
     column-gap: var(--ajm-space-lg);
