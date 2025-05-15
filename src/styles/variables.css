@@ -87,26 +87,6 @@
   --ajm-z-modal: 2000;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* colors --text */
-    --ajm-text-primary: var(--ajm-white);
-    --ajm-text-secondary: var(--ajm-gray-400);
-    --ajm-text-inverse: var(--ajm-black);
-
-    /* colors --background */
-    --ajm-bg-primary: var(--ajm-black);
-    --ajm-bg-secondary: var(--ajm-dark-gray);
-    --ajm-bg-surface: var(--ajm-gray-800);
-    --ajm-bg-dark: var(--ajm-dark-gray);
-    --ajm-bg-modal: var(--ajm-white);
-
-    /* colors --accent */
-    --ajm-accent: var(--ajm-accent);
-    --ajm-accent-hover: var(--ajm-accent-hover);
-  }
-}
-
 @media (max-width: 768px) {
   :root {
     --ajm-font-xs: 0.6875rem; /* 11px */
