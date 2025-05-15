@@ -1,12 +1,30 @@
 .painting-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: var(--ajm-space-md);
   margin: var(--ajm-space-xl) 0 var(--ajm-space-2xl) 0;
 }
 
-@media (max-width: 660px) {
+@media (max-width: 1280px) {
   .painting-gallery {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 980px) {
+  .painting-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 564px) {
+  .painting-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 424px) {
+  .painting-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   }
 }
