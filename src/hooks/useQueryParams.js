@@ -2,13 +2,23 @@ import { useLocation } from "react-router-dom";
 
 export const useQueryParams = () => {
   const location = useLocation();
-  const queryParams = new URLSearchParams(location.search);
-  const baseLocation = location.pathname.split("/")[1] || "";
+  const searchParams = new URLSearchParams(location.search);
+  const pathname = location.pathname;
+
+  const category = searchParams.get("category") || null;
+  const subcategory = searchParams.get("subcategory") || null;
+  const imageId = searchParams.get("id") || null;
+
+  const baseLocation = (() => {
+    const trimmed = pathname.replace(/^\/+|\/+$/g, "");
+    if (!trimmed || trimmed === "") return "obra-completa";
+    return trimmed.split("/")[0];
+  })();
 
   return {
-    baseLocation,
-    category: queryParams.get("category"),
-    subcategory: queryParams.get("subcategory"),
-    imageId: queryParams.get("id")
+    category,
+    subcategory,
+    imageId,
+    baseLocation
   };
 };
