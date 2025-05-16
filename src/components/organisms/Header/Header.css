@@ -14,7 +14,7 @@
 }
 
 .nav-container {
-  width: 66.6%;
+  min-width: 66.6%;
   display: flex;
   flex-direction: column;
   gap: var(--ajm-space-lg);
@@ -26,6 +26,6 @@
     gap: var(--ajm-space-2xl);
   }
   .nav-container {
-    width: 100%;
+    min-width: 100%;
   }
 }

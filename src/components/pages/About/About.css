@@ -3,7 +3,7 @@
 }
 
 .site-about {
-  max-width: 66.6%;
+  min-width: 66.6%;
   margin-left: auto;
   display: flex;
   align-items: start;
@@ -51,7 +51,7 @@
 
 @media (max-width: 1000px) {
   .site-about {
-    max-width: 100%;
+    min-width: 100%;
   }
 }
 
