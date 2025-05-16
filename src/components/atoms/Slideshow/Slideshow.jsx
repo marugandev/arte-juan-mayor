@@ -12,7 +12,7 @@ const Slideshow = () => {
       className="slideshow"
     >
       <source
-        src="https://res.cloudinary.com/cloudcloudinary0/video/upload/v1747266125/arte_juan_mayor/mpfw70tlwdrhemvj7ato.mp4"
+        src="/videos/slideshow_artejuanmayor_480_vf_short.mp4"
         type="video/mp4"
       />
     </video>
