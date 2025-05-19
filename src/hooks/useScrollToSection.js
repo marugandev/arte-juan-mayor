@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { useQueryParams } from "./useQueryParams";
 
@@ -6,7 +6,16 @@ export const useScrollToSection = () => {
   const location = useLocation();
   const { baseLocation, category, subcategory, imageId } = useQueryParams();
 
+  const hasMounted = useRef(false);
+
   useEffect(() => {
+    if (!hasMounted.current && location.pathname === "/") {
+      hasMounted.current = true;
+      return;
+    }
+
+    hasMounted.current = true;
+
     const elementId = subcategory || category || baseLocation;
 
     if (!elementId) return;
