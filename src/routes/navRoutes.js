@@ -48,7 +48,7 @@ export const navRoutes = [
   {
     id: 7,
     order: 2,
-    title: `2. Realismo-abstracto`,
+    title: `2. Realismo abstracto`,
     slug: "realismo-abstracto",
     path: "/obra-completa?category=realismo-abstracto",
     level: 1
