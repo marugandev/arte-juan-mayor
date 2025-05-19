@@ -23,7 +23,7 @@ export const useScrollToSection = () => {
     const timeout = setTimeout(() => {
       const el = document.getElementById(elementId);
       if (el) {
-        el.scrollIntoView();
+        el.scrollIntoView({ behavior: "smooth" });
       }
     }, 50);
 
