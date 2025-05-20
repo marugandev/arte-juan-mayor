@@ -12,7 +12,7 @@ const Footer = () => {
       >
         <img
           className="site-footer-logo"
-          src="https://res.cloudinary.com/cloudcloudinary0/image/upload/v1746776603/logo_marugandev.svg"
+          src="/images/logos/logo_marugandev.svg"
           alt="logo marugandev"
         />
       </a>
