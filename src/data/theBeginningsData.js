@@ -11,52 +11,52 @@ export const theBeginningsData = [
     images: [
       {
         id: "inicios-1",
-        src: "https://res.cloudinary.com/cloudcloudinary0/image/upload/v1745577681/arte_juan_mayor/the_beginnings/f5sizqaw6f54dfjqqtfk.webp",
+        src: "/public/images/the_beginnings/inicios-1.webp",
         alt: "painting-1"
       },
       {
         id: "inicios-2",
-        src: "https://res.cloudinary.com/cloudcloudinary0/image/upload/v1745577682/arte_juan_mayor/the_beginnings/djc1kj3l6pwuggiucbon.webp",
+        src: "/public/images/the_beginnings/inicios-2.webp",
         alt: "painting-2"
       },
       {
         id: "inicios-3",
-        src: "https://res.cloudinary.com/cloudcloudinary0/image/upload/v1745577681/arte_juan_mayor/the_beginnings/o2emssjdcwbh5cxghawc.webp",
+        src: "/public/images/the_beginnings/inicios-3.webp",
         alt: "painting-3"
       },
       {
         id: "inicios-4",
-        src: "https://res.cloudinary.com/cloudcloudinary0/image/upload/v1745577682/arte_juan_mayor/the_beginnings/papwxwymgiencmcvfwbw.webp",
+        src: "/public/images/the_beginnings/inicios-4.webp",
         alt: "painting-4"
       },
       {
         id: "inicios-5",
-        src: "https://res.cloudinary.com/cloudcloudinary0/image/upload/v1745577681/arte_juan_mayor/the_beginnings/crpm8komxsgnxqu6eoqj.webp",
+        src: "/public/images/the_beginnings/inicios-5.webp",
         alt: "painting-5"
       },
       {
         id: "inicios-6",
-        src: "https://res.cloudinary.com/cloudcloudinary0/image/upload/v1745577681/arte_juan_mayor/the_beginnings/pnrvaxiararkl3xjo3zb.webp",
+        src: "/public/images/the_beginnings/inicios-6.webp",
         alt: "painting-6"
       },
       {
         id: "inicios-7",
-        src: "https://res.cloudinary.com/cloudcloudinary0/image/upload/v1745577681/arte_juan_mayor/the_beginnings/za3qiq6htvkppnmojf4a.webp",
+        src: "/public/images/the_beginnings/inicios-7.webp",
         alt: "painting-7"
       },
       {
         id: "inicios-8",
-        src: "https://res.cloudinary.com/cloudcloudinary0/image/upload/v1745577681/arte_juan_mayor/the_beginnings/jowkcpvbq5ct0debjizq.webp",
+        src: "/public/images/the_beginnings/inicios-8.webp",
         alt: "painting-8"
       },
       {
         id: "inicios-9",
-        src: "https://res.cloudinary.com/cloudcloudinary0/image/upload/v1745577682/arte_juan_mayor/the_beginnings/mqld3wkyatsa95ifmroc.webp",
+        src: "/public/images/the_beginnings/inicios-9.webp",
         alt: "painting-9"
       },
       {
         id: "inicios-10",
-        src: "https://res.cloudinary.com/cloudcloudinary0/image/upload/v1745577682/arte_juan_mayor/the_beginnings/p3aavvsn6v2r6fie5gq2.webp",
+        src: "/public/images/the_beginnings/inicios-10.webp",
         alt: "painting-10"
       }
     ]
