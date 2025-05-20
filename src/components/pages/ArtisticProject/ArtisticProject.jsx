@@ -76,17 +76,17 @@ const ArtisticProject = () => {
       </div>
       <div className="bento-grid">
         <img
-          src="https://res.cloudinary.com/cloudcloudinary0/image/upload/v1745565543/arte_juan_mayor/artistic_project/hm1p34a9maxffrltdvqs.webp"
+          src="/images/artistic_project/artistic_project_1.webp"
           alt="material de pintura"
           loading="lazy"
         />
         <img
-          src="https://res.cloudinary.com/cloudcloudinary0/image/upload/v1745565544/arte_juan_mayor/artistic_project/fsl0rfctltw3rf9nutak.webp"
+          src="/images/artistic_project/artistic_project_2.webp"
           alt="material de pintura"
           loading="lazy"
         />
         <img
-          src="https://res.cloudinary.com/cloudcloudinary0/image/upload/v1745565543/arte_juan_mayor/artistic_project/fgq5arh00zovgarioerx.webp"
+          src="/images/artistic_project/artistic_project_3.webp"
           alt="material de pintura"
           loading="lazy"
         />
