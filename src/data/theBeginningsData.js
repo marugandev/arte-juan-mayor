@@ -11,52 +11,52 @@ export const theBeginningsData = [
     images: [
       {
         id: "inicios-1",
-        src: "/public/images/the_beginnings/inicios-1.webp",
+        src: "/images/the_beginnings/inicios-1.webp",
         alt: "painting-1"
       },
       {
         id: "inicios-2",
-        src: "/public/images/the_beginnings/inicios-2.webp",
+        src: "/images/the_beginnings/inicios-2.webp",
         alt: "painting-2"
       },
       {
         id: "inicios-3",
-        src: "/public/images/the_beginnings/inicios-3.webp",
+        src: "/images/the_beginnings/inicios-3.webp",
         alt: "painting-3"
       },
       {
         id: "inicios-4",
-        src: "/public/images/the_beginnings/inicios-4.webp",
+        src: "/images/the_beginnings/inicios-4.webp",
         alt: "painting-4"
       },
       {
         id: "inicios-5",
-        src: "/public/images/the_beginnings/inicios-5.webp",
+        src: "/images/the_beginnings/inicios-5.webp",
         alt: "painting-5"
       },
       {
         id: "inicios-6",
-        src: "/public/images/the_beginnings/inicios-6.webp",
+        src: "/images/the_beginnings/inicios-6.webp",
         alt: "painting-6"
       },
       {
         id: "inicios-7",
-        src: "/public/images/the_beginnings/inicios-7.webp",
+        src: "/images/the_beginnings/inicios-7.webp",
         alt: "painting-7"
       },
       {
         id: "inicios-8",
-        src: "/public/images/the_beginnings/inicios-8.webp",
+        src: "/images/the_beginnings/inicios-8.webp",
         alt: "painting-8"
       },
       {
         id: "inicios-9",
-        src: "/public/images/the_beginnings/inicios-9.webp",
+        src: "/images/the_beginnings/inicios-9.webp",
         alt: "painting-9"
       },
       {
         id: "inicios-10",
-        src: "/public/images/the_beginnings/inicios-10.webp",
+        src: "/images/the_beginnings/inicios-10.webp",
         alt: "painting-10"
       }
     ]
